@@ -1,11 +1,11 @@
 export interface Task {
-    color: string;
-    id: number;
-    title: string;
-    completed: boolean;
-  }
+  color: string;
+  id: number;
+  title: string;
+  completed: boolean;
+}
 
-  export interface TaskCardProps {
+export interface TaskCardProps {
   id: number;
   title: string;
   color: string;
@@ -14,6 +14,7 @@ export interface Task {
   onDelete: () => void;
   onEdit: () => void;
 }
+
 export interface TaskFormProps {
   onSubmit: (data: { title: string; color: string }) => void;
   initialData?: { title: string; color: string };
@@ -33,7 +34,7 @@ export interface ButtonProps {
   isSubmit?: boolean;
 }
 
-interface TaskStatusProps {
+export interface TaskStatusProps {
   label: string;
   value: number;
   total?: number;
@@ -41,6 +42,6 @@ interface TaskStatusProps {
   valueColor: string;
 }
 
-interface ColorThumbnailProps {
+export interface ColorThumbnailProps {
   color: string;
 }

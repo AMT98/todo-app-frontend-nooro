@@ -1,15 +1,16 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import TaskForm from "../../components/TaskForm";
 import Button from "../../components/Button";
 
-
 const EditTaskPage: React.FC = () => {
   const router = useRouter();
   const { id } = useParams();
 
-  const [task, setTask] = useState<{ title: string; color: string } | null>(null);
+  const [task, setTask] = useState<{ title: string; color: string } | null>(
+    null
+  );
 
   useEffect(() => {
     const fetchTask = async () => {
@@ -26,7 +27,7 @@ const EditTaskPage: React.FC = () => {
         }
       }
     };
-  
+
     fetchTask();
   }, [id]);
 
@@ -37,39 +38,46 @@ const EditTaskPage: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-  
+
       if (!res.ok) {
         throw new Error("Failed to edit task");
       }
-  
-      router.push("/"); 
+
+      router.push("/");
     } catch (error) {
       console.error("Error editing task:", error);
     }
   };
-  
 
   if (!task) {
-    return <div>Loading...</div>;
+    return (
+      <div className="animate-pulse">
+        <svg
+          className="animate-spin h-5 w-5 mr-3 ..."
+          viewBox="0 0 24 24"
+        ></svg>
+        Loading...
+      </div>
+    );
   }
 
   return (
-      <div className="flex flex-col items-center justify-center]">
+    <div className="flex flex-col items-center justify-center]">
       <TaskForm onSubmit={handleEditTask} initialData={task}>
-                    <Button 
-                        pageLink='/update-task'
-                        customClasses="flex items-center mt-[35px] justify-center p-[16px] gap-[8px] rounded-[8px] bg-[#1E6F9F] text-white w-full max-w-[736px] mx-auto h-[52px]"
-                        labelStyle="font-bold text-sm"
-                        imgPath="/mdi_check-bold.png"
-                        imgAlt="plus sign"
-                        imgHeight={16}
-                        imgWidth={16}
-                        imgStyle="ml-1"
-                        buttonTitle="Save"
-                        isSubmit={true}
-                    />
-                    </TaskForm>
-            </div>
+        <Button
+          pageLink="/update-task"
+          customClasses="flex items-center mt-[35px] justify-center p-[16px] gap-[8px] rounded-[8px] bg-[#1E6F9F] text-white w-full max-w-[736px] mx-auto h-[52px]"
+          labelStyle="font-bold text-sm"
+          imgPath="/mdi_check-bold.png"
+          imgAlt="plus sign"
+          imgHeight={16}
+          imgWidth={16}
+          imgStyle="ml-1"
+          buttonTitle="Save"
+          isSubmit={true}
+        />
+      </TaskForm>
+    </div>
   );
 };
 
