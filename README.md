@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo App Frontend Documentation
 
-## Getting Started
+This documentation will guide you through setting up the frontend for the Todo List application using **Next.js**, **Tailwind CSS**, and **TypeScript**.
 
-First, run the development server:
+## **Cloning the Repository**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+To get started with the project:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the frontend repository:
+    ```bash
+    git clone https://github.com/AMT98/todo-app-frontend-nooro.git
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Navigate to the project directory:
+    ```bash
+    cd todo-app-frontend-nooro
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## **Prerequisites**
 
-To learn more about Next.js, take a look at the following resources:
+Ensure the following are installed:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Node.js** (v18+ recommended)
+  - [Download Node.js](https://nodejs.org/)
+  - Verify installation:
+    ```bash
+    node -v
+    ```
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## **Frontend Setup**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Step 1: Install Dependencies**
+
+1. Install the required dependencies for the project:
+    ```bash
+    npm install
+    ```
+## **Running the Application**
+
+### **Step 1: Start the Backend Server**
+
+Before running the frontend, make sure your backend server is up and running:
+
+1. Go to the backend project (https://github.com/AMT98/todo-app-backend-nooro) directory and start the backend server:
+    ```bash
+    npm run dev
+    ```
+
+    The backend server should be running at `http://localhost:3000`.
+
+---
+
+### **Step 2: Start the Frontend Server**
+
+1. Go back to the frontend project directory and start the frontend server:
+    ```bash
+    npm run dev
+    ```
+
+    This will launch the Next.js development server at `http://localhost:3001`.
+
+---
+
+
+## **Conclusion**
+
+- **Next.js** for building the application.
+- **Tailwind CSS** for styling.
+- **TypeScript** for type safety.
+
